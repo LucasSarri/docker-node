@@ -1,6 +1,6 @@
 const express = require('express');
 
-const PORT = 3000;
+const PORT = process.env.NODE_DOCKER_PORT || 8080;
 const HOST = '0.0.0.0';
 
 const app = express();
@@ -9,4 +9,6 @@ app.get('/', (req,res) => {
     res.send("Hello World a")
 });
 
-app.listen(PORT,HOST);
+app.listen(PORT,() => {
+    console.log(`Server running on port ${PORT}.`);
+});
