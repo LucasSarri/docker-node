@@ -1,4 +1,5 @@
 const express = require('express');
+require("dotenv").config();
 
 const PORT = process.env.NODE_DOCKER_PORT || 8080;
 const HOST = '0.0.0.0';
